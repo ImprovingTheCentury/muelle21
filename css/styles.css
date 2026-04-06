@@ -1,0 +1,840 @@
+/* ════════════════════════════════════════════════════════
+   MUELLE 21 — styles.css
+   Estructura:
+   1. Variables & Reset
+   2. Utilidades globales
+   3. Botones
+   4. Navbar
+   5. Hero
+   6. Productos
+   7. Presencia / Mapa
+   8. Cómo funciona
+   9. Testimonios
+   10. CTA Final
+   11. Footer
+   12. WhatsApp flotante
+   13. Animaciones
+   14. Responsive
+════════════════════════════════════════════════════════ */
+
+
+/* ── 1. VARIABLES & RESET ───────────────────────────── */
+:root {
+  --black:     #0B0B0B;
+  --black-2:   #111111;
+  --black-3:   #1A1A1A;
+  --white:     #F5F5F5;
+  --gray-l:    #CFCFCF;
+  --gray-m:    #8A8A8A;
+  --gray-d:    #3A3A3A;
+  --border:    rgba(255, 255, 255, 0.08);
+  --wa:        #25D366;
+  --serif:     'Cormorant Garamond', Georgia, serif;
+  --sans:      'Montserrat', sans-serif;
+  --ease:      cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; }
+a   { color: inherit; text-decoration: none; }
+
+/* Scrollbar */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: var(--black); }
+::-webkit-scrollbar-thumb { background: var(--gray-d); }
+
+/* Noise overlay sutil sobre toda la página */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+
+/* ── 2. UTILIDADES GLOBALES ─────────────────────────── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Etiqueta pequeña tipo "Venta mayorista" */
+.label {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gray-m);
+}
+
+/* Línea divisoria decorativa */
+.divider {
+  width: 40px;
+  height: 1px;
+  background: var(--gray-d);
+  margin: 0 auto 48px;
+}
+
+/* Header de cada sección */
+.section-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--gray-m);
+}
+
+
+/* ── 3. BOTONES ─────────────────────────────────────── */
+
+/* Botón principal — WhatsApp verde */
+.btn-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--wa);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 16px 32px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto shimmer al hacer hover */
+.btn-wa::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.4s var(--ease);
+}
+
+.btn-wa:hover::after      { transform: translateX(0); }
+.btn-wa:hover             { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(37, 211, 102, 0.3); }
+.btn-wa svg               { flex-shrink: 0; }
+
+/* Botón secundario — contorno blanco */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--white);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border: 1px solid var(--gray-d);
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+}
+
+.btn-ghost:hover {
+  border-color: var(--gray-m);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+
+/* ── 4. NAVBAR ──────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  transition: background 0.4s var(--ease), backdrop-filter 0.4s;
+}
+
+/* Se activa con JS al hacer scroll */
+nav.scrolled {
+  background: rgba(11, 11, 11, 0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  padding: 0 40px;
+}
+
+.nav-logo img    { height: 40px; width: auto; }
+.nav-links       { display: flex; align-items: center; gap: 40px; list-style: none; }
+.nav-links a     { font-size: 11px; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-m); transition: color 0.2s; }
+.nav-links a:hover { color: var(--white); }
+.nav-cta .btn-wa { padding: 12px 24px; font-size: 11px; }
+
+/* Hamburger mobile */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: var(--white);
+  transition: all 0.3s;
+}
+
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(4px, -4px); }
+
+/* Menú mobile fullscreen */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--black);
+  z-index: 99;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.mobile-menu.open { display: flex; }
+
+.mobile-menu a {
+  font-family: var(--serif);
+  font-size: 36px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: var(--white);
+  transition: color 0.2s;
+}
+
+.mobile-menu a:hover     { color: var(--gray-m); }
+.mobile-menu a.wa-link   { color: var(--wa); }
+
+
+/* ── 5. HERO ────────────────────────────────────────── */
+#hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Columna izquierda — texto */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 140px 80px 80px 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: fadeUp 0.8s var(--ease) 0.2s forwards;
+}
+
+.hero-eyebrow-line { width: 32px; height: 1px; background: var(--gray-m); }
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(52px, 5.5vw, 80px);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: fadeUp 0.9s var(--ease) 0.4s forwards;
+}
+
+.hero-title em { font-style: italic; color: var(--gray-l); }
+
+.hero-sub {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--gray-m);
+  line-height: 1.8;
+  max-width: 380px;
+  margin-bottom: 56px;
+  opacity: 0;
+  animation: fadeUp 0.9s var(--ease) 0.6s forwards;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.9s var(--ease) 0.8s forwards;
+}
+
+/* Stats debajo de los botones */
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  margin-top: 80px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+  opacity: 0;
+  animation: fadeUp 0.9s var(--ease) 1s forwards;
+}
+
+.stat-num   { font-family: var(--serif); font-size: 38px; font-weight: 300; line-height: 1; margin-bottom: 4px; }
+.stat-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-m); }
+
+/* Columna derecha — imagen */
+.hero-right {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradiente que fusiona la imagen con el fondo */
+.hero-right::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--black) 0%, transparent 30%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-right img {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* "M" gigante de fondo decorativa */
+.hero-watermark {
+  position: absolute;
+  right: -60px;
+  bottom: -40px;
+  font-family: var(--serif);
+  font-size: 400px;
+  font-weight: 600;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+
+/* ── 6. PRODUCTOS ───────────────────────────────────── */
+#productos {
+  padding: 120px 0;
+  background: var(--black);
+}
+
+/* Grilla tipo editorial — primer card más alto */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-bottom: 64px;
+}
+
+.product-card:first-child { grid-row: span 2; }
+
+.product-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--black-3);
+}
+
+/* Overlay oscuro al hacer hover */
+.product-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s var(--ease);
+}
+
+.product-card:hover::after { opacity: 1; }
+
+.product-img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  transition: transform 0.6s var(--ease);
+}
+
+.product-card:first-child .product-img { aspect-ratio: auto; height: 100%; min-height: 500px; }
+.product-card:hover .product-img       { transform: scale(1.04); }
+
+/* REEMPLAZAR: background de cada .product-img por una <img> real */
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Placeholder cuando no hay imagen */
+.product-img-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 20px,
+    rgba(255, 255, 255, 0.015) 20px,
+    rgba(255, 255, 255, 0.015) 21px
+  );
+}
+
+.ph-icon { opacity: 0.1; }
+.ph-text { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-d); opacity: 0.5; }
+
+/* Info del producto — aparece al hacer hover */
+.product-info {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 24px;
+  z-index: 2;
+  transform: translateY(8px);
+  opacity: 0;
+  transition: all 0.4s var(--ease);
+}
+
+.product-card:hover .product-info { opacity: 1; transform: translateY(0); }
+.product-name { font-family: var(--serif); font-size: 22px; font-weight: 300; margin-bottom: 4px; }
+.product-cat  { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-m); }
+
+.products-cta { text-align: center; }
+
+
+/* ── 7. PRESENCIA / MAPA ────────────────────────────── */
+#presencia {
+  padding: 120px 0;
+  background: var(--black-2);
+  overflow: hidden;
+}
+
+.presencia-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.presencia-text .section-header { text-align: left; margin-bottom: 40px; }
+.presencia-text .divider         { margin: 0 0 40px; }
+
+.presencia-copy {
+  font-size: 14px;
+  color: var(--gray-m);
+  line-height: 1.9;
+  margin-bottom: 40px;
+}
+
+/* REEMPLAZAR: número real de clientes */
+.presencia-number {
+  font-family: var(--serif);
+  font-size: 80px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.presencia-number-label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gray-m);
+  margin-bottom: 32px;
+}
+
+/* Mapa SVG estilizado */
+.map-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Halo de luz detrás del mapa */
+.map-container::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.map-svg {
+  width: 100%;
+  max-width: 420px;
+  filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.04));
+}
+
+/* Puntos del mapa con animación de pulso escalonada */
+.map-dot                    { animation: pulse 2s ease-in-out infinite; }
+.map-dot:nth-child(2)       { animation-delay: 0.4s; }
+.map-dot:nth-child(3)       { animation-delay: 0.8s; }
+.map-dot:nth-child(4)       { animation-delay: 1.2s; }
+.map-dot:nth-child(5)       { animation-delay: 1.6s; }
+
+
+/* ── 8. CÓMO FUNCIONA ───────────────────────────────── */
+#como-funciona {
+  padding: 120px 0;
+  background: var(--black);
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 72px;
+}
+
+.step {
+  padding: 56px 48px;
+  background: var(--black-2);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s var(--ease);
+}
+
+.step:hover { background: var(--black-3); }
+
+/* Línea superior que aparece al hacer hover */
+.step::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.12), transparent);
+  transform: scaleX(0);
+  transition: transform 0.4s var(--ease);
+  transform-origin: left;
+}
+
+.step:hover::before { transform: scaleX(1); }
+
+.step-num {
+  font-family: var(--serif);
+  font-size: 80px;
+  font-weight: 300;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.06);
+  margin-bottom: 32px;
+  display: block;
+  letter-spacing: -0.04em;
+}
+
+.step-icon  { margin-bottom: 24px; color: var(--gray-m); }
+.step-title { font-family: var(--serif); font-size: 26px; font-weight: 300; margin-bottom: 16px; }
+.step-desc  { font-size: 13px; color: var(--gray-m); line-height: 1.8; }
+
+
+/* ── 9. TESTIMONIOS ─────────────────────────────────── */
+#testimonios {
+  padding: 120px 0;
+  background: var(--black-2);
+}
+
+/* Badges de confianza */
+.trust-badges {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+  padding-bottom: 80px;
+  border-bottom: 1px solid var(--border);
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--gray-m);
+}
+
+.badge svg       { color: var(--gray-d); flex-shrink: 0; }
+.badge-text      { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; }
+
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+
+.testimonial-card {
+  padding: 48px 40px;
+  background: var(--black-3);
+  position: relative;
+  transition: background 0.3s;
+}
+
+.testimonial-card:hover { background: #1f1f1f; }
+
+.testimonial-quote {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--gray-l);
+  margin-bottom: 32px;
+}
+
+/* REEMPLAZAR: datos reales de cada cliente */
+.testimonial-author  { display: flex; align-items: center; gap: 16px; }
+
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--gray-d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 300;
+  flex-shrink: 0;
+}
+
+.author-name  { font-size: 13px; font-weight: 500; margin-bottom: 2px; }
+.author-biz   { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-m); }
+
+.quote-mark {
+  position: absolute;
+  top: 32px; right: 32px;
+  font-family: var(--serif);
+  font-size: 80px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+}
+
+
+/* ── 10. CTA FINAL ──────────────────────────────────── */
+#cta-final {
+  padding: 160px 0;
+  background: var(--black);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Halo verde sutil de fondo */
+#cta-final::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(37, 211, 102, 0.04) 0%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cta-label  { margin-bottom: 32px; }
+
+.cta-title {
+  font-family: var(--serif);
+  font-size: clamp(48px, 6vw, 88px);
+  font-weight: 300;
+  line-height: 1.05;
+  margin-bottom: 24px;
+}
+
+.cta-title em { font-style: italic; color: var(--gray-m); }
+
+.cta-sub {
+  font-size: 14px;
+  color: var(--gray-m);
+  max-width: 440px;
+  margin: 0 auto 56px;
+  line-height: 1.8;
+}
+
+.cta-actions { display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; }
+
+
+/* ── 11. FOOTER ─────────────────────────────────────── */
+footer {
+  padding: 56px 0;
+  border-top: 1px solid var(--border);
+  background: var(--black);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.footer-logo img  { height: 32px; opacity: 0.5; }
+.footer-copy      { font-size: 11px; color: var(--gray-m); letter-spacing: 0.1em; }
+.footer-links     { display: flex; gap: 32px; }
+.footer-links a   { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-m); transition: color 0.2s; }
+.footer-links a:hover { color: var(--white); }
+
+
+/* ── 12. WHATSAPP FLOTANTE ──────────────────────────── */
+.wa-float {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 56px;
+  height: 56px;
+  background: var(--wa);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  box-shadow: 0 8px 32px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s var(--ease);
+  cursor: pointer;
+}
+
+.wa-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 48px rgba(37, 211, 102, 0.5);
+}
+
+/* Anillos de pulso animados */
+.wa-float-ring {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  animation: ringPulse 2.5s ease-out infinite;
+}
+
+.wa-float-ring:nth-child(2) { animation-delay: 0.8s; }
+
+
+/* ── 13. ANIMACIONES ────────────────────────────────── */
+
+/* Entrada desde abajo */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Pulso para los puntos del mapa */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+/* Anillo que se expande y desvanece */
+@keyframes ringPulse {
+  0%   { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* Scroll reveal — estado inicial */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+
+/* Scroll reveal — estado visible (activado por JS) */
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+.reveal-delay-1 { transition-delay: 0.15s; }
+.reveal-delay-2 { transition-delay: 0.30s; }
+.reveal-delay-3 { transition-delay: 0.45s; }
+
+
+/* ── 14. RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
+  .product-card:first-child { grid-row: span 1; }
+  .product-card:first-child .product-img { min-height: auto; }
+
+  .presencia-inner { grid-template-columns: 1fr; gap: 56px; }
+  .presencia-text .section-header { text-align: center; }
+  .presencia-text .divider        { margin: 0 auto 40px; }
+  .presencia-number               { text-align: center; }
+  .presencia-number-label         { text-align: center; }
+  .presencia-copy                 { text-align: center; }
+}
+
+@media (max-width: 768px) {
+  #hero                    { grid-template-columns: 1fr; }
+  .hero-right              { display: none; }
+  .hero-left               { padding: 120px 32px 80px; }
+  .hero-stats              { gap: 32px; }
+  .steps-grid              { grid-template-columns: 1fr; }
+  .testimonials-grid       { grid-template-columns: 1fr; }
+  .products-grid           { grid-template-columns: 1fr; }
+  .nav-links, .nav-cta     { display: none; }
+  .hamburger               { display: flex; }
+  .footer-inner            { flex-direction: column; align-items: flex-start; }
+  .trust-badges            { gap: 24px; }
+}

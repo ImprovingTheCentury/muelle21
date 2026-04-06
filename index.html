@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muelle 21 — Ropa por Mayor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="assets/logo.png" alt="Muelle 21">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#presencia">Presencia</a></li>
+        <li><a href="#como-funciona">Cómo funciona</a></li>
+        <li><a href="#testimonios">Clientes</a></li>
+      </ul>
+      <div class="nav-cta">
+        <!-- REEMPLAZAR: tu número de WhatsApp -->
+        <a href="https://wa.me/5493564681839?text=Hola%2C%20me%20interesa%20comprar%20por%20mayor" class="btn-wa" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Contactar
+        </a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#productos">Productos</a>
+    <a href="#presencia">Presencia</a>
+    <a href="#como-funciona">Cómo funciona</a>
+    <a href="#testimonios">Clientes</a>
+    <a href="https://wa.me/5493564681839" target="_blank" class="wa-link">WhatsApp</a>
+  </div>
+
+  <section id="hero">
+    <div class="hero-watermark">M</div>
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-line"></span>
+        <span class="label">Venta mayorista de indumentaria</span>
+      </div>
+      <h1 class="hero-title">
+        Ropa que ya<br>
+        se vende<br>
+        <em>en otros negocios.</em>
+      </h1>
+      <p class="hero-sub">
+        Abastecemos negocios de todo el país con stock permanente, 
+        precios mayoristas y atención directa por WhatsApp.
+      </p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5493564681839?text=Hola%2C%20quiero%20conocer%20los%20precios%20mayoristas" class="btn-wa" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Consultar precios
+        </a>
+        <a href="#productos" class="btn-ghost">Ver catálogo</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">+20</div>
+          <div class="stat-label">Negocios activos</div>
+        </div>
+        <div>
+          <div class="stat-num">17+</div>
+          <div class="stat-label">Años en el mercado</div>
+        </div>
+        <div>
+          <div class="stat-num">2hs</div>
+          <div class="stat-label">Respuesta promedio</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="assets/hero.png" alt="Muelle 21 — Depósito mayorista">
+    </div>
+  </section>
+
+  <section id="productos">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label" style="margin-bottom:16px">Lo más buscado</div>
+        <h2 class="section-title">Productos <em>destacados</em></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="products-grid reveal">
+        <!-- REEMPLAZAR: poné <img src="assets/producto1.jpg"> dentro de .product-img y borrá .product-img-placeholder -->
+        <div class="product-card">
+          <div class="product-img">
+            <img src="assets/essentials.webp" alt="Línea Denim">
+          </div>
+          <div class="product-info">
+            <div class="product-name">Colección Esencial</div>
+            <div class="product-cat">Remeras · Por bulto</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <img src="assets/denim.jpg" alt="Línea Denim">
+          </div>
+          <div class="product-info">
+            <div class="product-name">Denim</div>
+            <div class="product-cat">Pantalones · Por docena</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <img src="assets/lineadeportiva.webp" alt="Línea Denim">
+          </div>
+          <div class="product-info">
+            <div class="product-name">Deportiva</div>
+            <div class="product-cat">Productos · Por Lote</div>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img">
+            <img src="assets/smartcasual.jpg" alt="Línea Denim">
+          </div>
+          <div class="product-info">
+            <div class="product-name">Smart Casual</div>
+            <div class="product-cat">Productos . Por Lote</div>
+          </div>
+        </div>
+      </div>
+      <div class="products-cta reveal">
+        <a href="https://wa.me/5493564681839?text=Hola%2C%20quiero%20ver%20el%20cat%C3%A1logo%20completo" class="btn-ghost" target="_blank" rel="noopener">
+          Ver catálogo completo &nbsp;→
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="presencia">
+    <div class="container">
+      <div class="presencia-inner">
+        <div class="presencia-text reveal">
+          <div class="section-header">
+            <div class="label" style="margin-bottom:16px">Presencia nacional</div>
+            <h2 class="section-title">Ya trabajamos con<br><em>negocios de distintas provincias</em></h2>
+          </div>
+          <div class="divider"></div>
+          <!-- Número animado — también actualizá TARGET en main.js -->
+          <div class="presencia-number">+20</div>
+          <div class="presencia-number-label">NEGOCIOS YA TRABAJAN CON NOSOTROS</div>
+          <p class="presencia-copy">
+          Desde 2008 abastecemos tiendas, boutiques y revendedores con atención directa,
+           stock constante y una relación cercana con cada cliente.
+          </p>
+          <a href="https://wa.me/5493564681839?text=Hola%2C%20quiero%20sumarme%20como%20cliente%20mayorista" class="btn-wa" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Quiero ser cliente
+          </a>
+        </div>
+<div class="map-container reveal reveal-delay-1">
+<svg class="map-svg" viewBox="365.606 136.218 1509.0341 1805.585" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cbGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#222222"/>
+      <stop offset="100%" stop-color="#161616"/>
+    </linearGradient>
+    <linearGradient id="sfGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2a2a2a"/>
+      <stop offset="100%" stop-color="#1c1c1c"/>
+    </linearGradient>
+    <filter id="dotGlow" x="-150%" y="-150%" width="400%" height="400%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="mainGlow" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="20" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .map-dot { animation: pulseMapDot 2.5s ease-in-out infinite; }
+      .sf-ring { animation: sfRing 2.5s ease-out infinite; }
+      .sf-ring-2 { animation: sfRing 2.5s ease-out 0.8s infinite; }
+      @keyframes pulseMapDot {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.3; }
+      }
+      @keyframes sfRing {
+        0%   { transform: scale(1); opacity: 0.5; }
+        100% { transform: scale(2.8); opacity: 0; }
+      }
+    </style>
+  </defs>
+
+  <!-- Córdoba -->
+  <path d="M 365.606 907.761 L 441.461 670.94 L 486.847 659.468 L 544.097 607.218 C 544.097 607.218 544.016 534.89 546.367 534.093 C 548.718 533.296 666.973 514.095 666.973 514.095 L 812.17 540.241 C 812.17 540.241 867.906 551.235 867.906 552.058 C 867.906 552.881 873.965 566.523 874.376 566.523 C 874.787 566.523 1014.944 590.992 1014.944 590.992 L 1013.689 611.189 L 1061.576 651.351 L 1059.901 698.649 C 1059.901 698.649 1079.241 717.165 1079.241 717.577 C 1079.241 717.989 1150.043 723.976 1150.043 723.976 L 1162.749 759.249 L 1218.248 824.893 C 1218.248 824.893 1172.113 1004.033 1171.695 1004.033 C 1171.277 1004.033 1149.361 1079.908 1149.361 1079.908 L 1149.361 1124.297 L 1150.944 1179.484 L 1185.429 1224.689 L 1206.294 1282.324 L 1234.394 1364.055 L 1230.613 1411.155 L 996.541 1767.857 L 891.793 1767.68 L 886.848 1941.803 C 886.848 1941.803 509.179 1933.977 509.591 1933.14 C 510.003 1932.303 502.56 1456.867 502.56 1456.03 C 502.56 1455.193 549.802 1352.899 549.802 1350.387 C 549.802 1347.875 557.57 1311.404 557.57 1310.985 C 557.57 1310.566 550.405 1236.246 550.405 1236.246 L 490.457 1223.334 C 490.457 1223.334 476.283 1159.688 476.283 1159.269 C 476.283 1158.85 426.941 1130.913 426.941 1130.913 L 370.25 1109.587 L 365.606 907.761 Z" fill="url(#cbGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- Santa Fe -->
+  <path d="M 1255.268 136.218 L 1874.64 142.521 L 1861.409 162.242 L 1835.093 172.285 L 1828.039 216.377 L 1832.742 260.633 L 1822.681 315.882 L 1806.377 350.259 C 1806.377 350.259 1804.232 386.696 1803.874 387.048 C 1803.516 387.4 1773.383 422.339 1773.025 422.339 C 1772.667 422.339 1733.4 463.34 1732.327 463.692 C 1731.254 464.044 1716.551 502.287 1716.551 502.287 L 1707.854 586.949 C 1707.854 586.949 1717.678 636.46 1717.321 636.811 C 1716.964 637.162 1701.436 689.758 1701.078 691.164 C 1700.72 692.57 1698.66 741.51 1698.66 741.51 C 1698.66 741.51 1702.878 808.706 1702.878 807.991 C 1702.878 807.276 1629.437 943.527 1629.437 943.527 L 1605.271 966.953 C 1605.271 966.953 1584.156 1013.756 1583.435 1014.111 C 1582.714 1014.466 1557.826 1039.346 1557.105 1039.701 C 1556.384 1040.056 1483.655 1090.654 1483.655 1090.654 L 1474.063 1143.448 C 1474.063 1143.448 1480.989 1171.151 1480.989 1172.214 C 1480.989 1173.277 1478.104 1200.843 1478.104 1201.552 C 1478.104 1202.261 1481.747 1229.844 1481.747 1229.844 L 1465.945 1268.846 C 1465.945 1268.846 1472.431 1320.099 1471.349 1320.808 C 1470.267 1321.517 1490.288 1392.263 1490.288 1392.972 C 1490.288 1393.681 1526.948 1438.369 1526.948 1438.369 L 1558.676 1460.957 L 1569.227 1477.225 L 1548.308 1514.552 L 1537.861 1548.566 C 1537.861 1548.566 1525.958 1568.11 1525.597 1568.11 C 1525.236 1568.11 1497.947 1569.161 1497.226 1569.161 C 1496.505 1569.161 1476.38 1556.8 1474.937 1556.44 C 1473.494 1556.08 1448.467 1550.015 1447.746 1549.654 C 1447.025 1549.293 1430.433 1557.442 1430.433 1557.442 L 1415.284 1582.635 C 1415.284 1582.635 1258.908 1764.44 1257.105 1764.44 C 1255.302 1764.44 1002.155 1768.289 1002.155 1768.289 L 1234.04 1411.72 C 1234.04 1411.72 1237.45 1362.479 1237.362 1362.653 C 1237.274 1362.827 1188.702 1223.814 1188.702 1223.72 C 1188.702 1223.626 1154.56 1178.589 1154.56 1178.496 C 1154.56 1178.403 1152.042 1080.088 1152.042 1080.088 L 1178.693 986.601 L 1221.197 826.115 L 1163.297 754.861 C 1163.297 754.861 1254.037 138.189 1255.268 136.218 Z" fill="url(#sfGrad)" stroke="rgba(255,255,255,0.1)" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- Puntos clientes -->
+    <g class="map-dot" style="animation-delay:0s" filter="url(#dotGlow)">
+      <circle cx="1232.76" cy="976.147" r="20" fill="white" opacity="0.05"/>
+      <circle cx="1232.76" cy="976.147" r="12" fill="white" opacity="0.08"/>
+      <circle cx="1232.76" cy="976.147" r="7.5" fill="white" opacity="0.9"/>
+    </g>
+    <g class="map-dot" style="animation-delay:0.4s" filter="url(#dotGlow)">
+      <circle cx="1232.96" cy="1086.26" r="20" fill="white" opacity="0.05"/>
+      <circle cx="1232.96" cy="1086.26" r="12" fill="white" opacity="0.08"/>
+      <circle cx="1232.96" cy="1086.26" r="7.5" fill="white" opacity="0.9"/>
+    </g>
+    <g class="map-dot" style="animation-delay:0.8s" filter="url(#dotGlow)">
+      <circle cx="1204.58" cy="1046.17" r="20" fill="white" opacity="0.05"/>
+      <circle cx="1204.58" cy="1046.17" r="12" fill="white" opacity="0.08"/>
+      <circle cx="1204.58" cy="1046.17" r="7.5" fill="white" opacity="0.9"/>
+    </g>
+    <g class="map-dot" style="animation-delay:1.2s" filter="url(#dotGlow)">
+      <circle cx="1042.97" cy="993.831" r="20" fill="white" opacity="0.05"/>
+      <circle cx="1042.97" cy="993.831" r="12" fill="white" opacity="0.08"/>
+      <circle cx="1042.97" cy="993.831" r="7.5" fill="white" opacity="0.9"/>
+    </g>
+    <g class="map-dot" style="animation-delay:1.6s" filter="url(#dotGlow)">
+      <circle cx="1180.44" cy="888.736" r="20" fill="white" opacity="0.05"/>
+      <circle cx="1180.44" cy="888.736" r="12" fill="white" opacity="0.08"/>
+      <circle cx="1180.44" cy="888.736" r="7.5" fill="white" opacity="0.9"/>
+    </g>
+    <g class="map-dot" style="animation-delay:2.0s" filter="url(#dotGlow)">
+      <circle cx="1146.7" cy="868.173" r="20" fill="white" opacity="0.05"/>
+      <circle cx="1146.7" cy="868.173" r="12" fill="white" opacity="0.08"/>
+      <circle cx="1146.7" cy="868.173" r="7.5" fill="white" opacity="0.9"/>
+    </g>
+    <g class="map-dot" style="animation-delay:2.4s" filter="url(#dotGlow)">
+      <circle cx="1110.7" cy="880.648" r="20" fill="white" opacity="0.05"/>
+      <circle cx="1110.7" cy="880.648" r="12" fill="white" opacity="0.08"/>
+      <circle cx="1110.7" cy="880.648" r="7.5" fill="white" opacity="0.9"/>
+    </g>
+    <g class="map-dot" style="animation-delay:2.8s" filter="url(#dotGlow)">
+      <circle cx="1186.36" cy="823.435" r="20" fill="white" opacity="0.05"/>
+      <circle cx="1186.36" cy="823.435" r="12" fill="white" opacity="0.08"/>
+      <circle cx="1186.36" cy="823.435" r="7.5" fill="white" opacity="0.9"/>
+    </g>
+    <g class="map-dot" style="animation-delay:3.2s" filter="url(#dotGlow)">
+      <circle cx="1012.25" cy="986.979" r="20" fill="white" opacity="0.05"/>
+      <circle cx="1012.25" cy="986.979" r="12" fill="white" opacity="0.08"/>
+      <circle cx="1012.25" cy="986.979" r="7.5" fill="white" opacity="0.9"/>
+    </g>
+    <g class="map-dot" style="animation-delay:3.6s" filter="url(#dotGlow)">
+      <circle cx="1194.71" cy="772.271" r="20" fill="white" opacity="0.05"/>
+      <circle cx="1194.71" cy="772.271" r="12" fill="white" opacity="0.08"/>
+      <circle cx="1194.71" cy="772.271" r="7.5" fill="white" opacity="0.9"/>
+    </g>
+    <g class="map-dot" style="animation-delay:0.2s" filter="url(#dotGlow)">
+      <circle cx="1197.86" cy="728.915" r="20" fill="white" opacity="0.05"/>
+      <circle cx="1197.86" cy="728.915" r="12" fill="white" opacity="0.08"/>
+      <circle cx="1197.86" cy="728.915" r="7.5" fill="white" opacity="0.9"/>
+    </g>
+    <g class="map-dot" style="animation-delay:0.6s" filter="url(#dotGlow)">
+      <circle cx="1203.03" cy="688.7" r="20" fill="white" opacity="0.05"/>
+      <circle cx="1203.03" cy="688.7" r="12" fill="white" opacity="0.08"/>
+      <circle cx="1203.03" cy="688.7" r="7.5" fill="white" opacity="0.9"/>
+    </g>
+    <g class="map-dot" style="animation-delay:1.0s" filter="url(#dotGlow)">
+      <circle cx="1250.82" cy="696.944" r="20" fill="white" opacity="0.05"/>
+      <circle cx="1250.82" cy="696.944" r="12" fill="white" opacity="0.08"/>
+      <circle cx="1250.82" cy="696.944" r="7.5" fill="white" opacity="0.9"/>
+    </g>
+    <g class="map-dot" style="animation-delay:1.4s" filter="url(#dotGlow)">
+      <circle cx="1316.23" cy="665.217" r="20" fill="white" opacity="0.05"/>
+      <circle cx="1316.23" cy="665.217" r="12" fill="white" opacity="0.08"/>
+      <circle cx="1316.23" cy="665.217" r="7.5" fill="white" opacity="0.9"/>
+    </g>
+    <g class="map-dot" style="animation-delay:1.8s" filter="url(#dotGlow)">
+      <circle cx="1231.51" cy="637.973" r="20" fill="white" opacity="0.05"/>
+      <circle cx="1231.51" cy="637.973" r="12" fill="white" opacity="0.08"/>
+      <circle cx="1231.51" cy="637.973" r="7.5" fill="white" opacity="0.9"/>
+    </g>
+    <g class="map-dot" style="animation-delay:2.2s" filter="url(#dotGlow)">
+      <circle cx="1205.34" cy="607.692" r="20" fill="white" opacity="0.05"/>
+      <circle cx="1205.34" cy="607.692" r="12" fill="white" opacity="0.08"/>
+      <circle cx="1205.34" cy="607.692" r="7.5" fill="white" opacity="0.9"/>
+    </g>
+    <g class="map-dot" style="animation-delay:2.6s" filter="url(#dotGlow)">
+      <circle cx="1099.13" cy="1132.94" r="20" fill="white" opacity="0.05"/>
+      <circle cx="1099.13" cy="1132.94" r="12" fill="white" opacity="0.08"/>
+      <circle cx="1099.13" cy="1132.94" r="7.5" fill="white" opacity="0.9"/>
+    </g>
+    <g class="map-dot" style="animation-delay:3.0s" filter="url(#dotGlow)">
+      <circle cx="1133.09" cy="1139.75" r="20" fill="white" opacity="0.05"/>
+      <circle cx="1133.09" cy="1139.75" r="12" fill="white" opacity="0.08"/>
+      <circle cx="1133.09" cy="1139.75" r="7.5" fill="white" opacity="0.9"/>
+    </g>
+    <g class="map-dot" style="animation-delay:3.4s" filter="url(#dotGlow)">
+      <circle cx="1246.54" cy="449.36" r="20" fill="white" opacity="0.05"/>
+      <circle cx="1246.54" cy="449.36" r="12" fill="white" opacity="0.08"/>
+      <circle cx="1246.54" cy="449.36" r="7.5" fill="white" opacity="0.9"/>
+    </g>
+
+  <!-- San Francisco — punto principal -->
+  <g filter="url(#mainGlow)">
+    <circle cx="1177.67" cy="1000.9" r="70" fill="white" opacity="0.04"/>
+    <circle cx="1177.67" cy="1000.9" r="45" fill="white" opacity="0.06"/>
+  </g>
+  <circle cx="1177.67" cy="1000.9" r="38" fill="none"
+          stroke="rgba(255,255,255,0.2)" stroke-width="2" class="sf-ring"
+          style="transform-origin: 1177.67px 1000.9px"/>
+  <circle cx="1177.67" cy="1000.9" r="38" fill="none"
+          stroke="rgba(255,255,255,0.12)" stroke-width="1.5" class="sf-ring-2"
+          style="transform-origin: 1177.67px 1000.9px"/>
+  <circle cx="1177.67" cy="1000.9" r="24.892" fill="white" opacity="0.95"/>
+
+</svg>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="label" style="margin-bottom:16px">Proceso simple</div>
+        <h2 class="section-title">Comprar por mayor<br><em>nunca fue tan fácil</em></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="steps-grid">
+        <div class="step reveal">
+          <span class="step-num">01</span>
+          <div class="step-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="step-title">Contacto por WhatsApp</div>
+          <p class="step-desc">Escribinos por WhatsApp. Te respondemos rápido con toda la información de precios, catálogo y condiciones mayoristas.</p>
+        </div>
+        <div class="step reveal reveal-delay-1">
+          <span class="step-num">02</span>
+          <div class="step-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="2"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <div class="step-title">Selección de productos</div>
+          <p class="step-desc">Elegís los productos que necesitás del catálogo. Te asesoramos en tendencias y qué rota mejor en cada tipo de negocio.</p>
+        </div>
+        <div class="step reveal reveal-delay-2">
+          <span class="step-num">03</span>
+          <div class="step-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+          <div class="step-title">Recibís tu pedido</div>
+          <p class="step-desc">Coordinamos el envío a todo el país. Tu mercadería llega en tiempo y forma, lista para poner a la venta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonios">
+    <div class="container">
+      <div class="trust-badges reveal">
+        <div class="badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span class="badge-text">Stock garantizado</span>
+        </div>
+        <div class="badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+          <span class="badge-text">Calidad constante</span>
+        </div>
+        <div class="badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          <span class="badge-text">Envíos a todo el país</span>
+        </div>
+        <div class="badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span class="badge-text">Atención personalizada</span>
+        </div>
+      </div>
+      <div class="section-header reveal">
+        <div class="label" style="margin-bottom:16px">Lo que dicen nuestros clientes</div>
+        <h2 class="section-title">Negocios que ya<br><em>confían en nosotros</em></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="testimonials-grid">
+        <!-- REEMPLAZAR: testimonios reales de tus clientes -->
+        <div class="testimonial-card reveal">
+          <span class="quote-mark">"</span>
+          <p class="testimonial-quote">Trabajo con Muelle 21 hace dos años y nunca me fallaron. Precios competitivos y siempre tienen lo que necesito para la temporada.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">M</div>
+            <div>
+              <div class="author-name">María G.</div>
+              <div class="author-biz">Boutique Mía — Rosario</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-1">
+          <span class="quote-mark">"</span>
+          <p class="testimonial-quote">Lo mejor es la atención directa por WhatsApp. Sin vueltas, sin formularios. Mandás el pedido y en dos días tenés la mercadería.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">C</div>
+            <div>
+              <div class="author-name">Carlos V.</div>
+              <div class="author-biz">Ropa Center — Córdoba</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-2">
+          <span class="quote-mark">"</span>
+          <p class="testimonial-quote">Empecé con un pedido chico para probar. Ahora son mi proveedor principal. La calidad de la ropa convence sola a mis clientas.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">L</div>
+            <div>
+              <div class="author-name">Laura P.</div>
+              <div class="author-biz">Lo de Laura — Mendoza</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta-final">
+    <div class="container">
+      <div class="cta-label label reveal">Siguiente paso</div>
+      <h2 class="cta-title reveal reveal-delay-1">
+        Sumá Muelle 21<br>a tu <em>negocio hoy</em>
+      </h2>
+      <p class="cta-sub reveal reveal-delay-2">
+        Escribinos por WhatsApp y recibí el catálogo completo con precios mayoristas.
+        Sin compromiso, sin formularios.
+      </p>
+      <div class="cta-actions reveal reveal-delay-3">
+        <a href="https://wa.me/5493564681839?text=Hola%20Muelle%2021%2C%20quiero%20conocer%20los%20precios%20mayoristas" class="btn-wa" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Escribinos por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <img src="assets/logo.png" alt="Muelle 21">
+        </div>
+        <div class="footer-copy">© 2025 Muelle 21. Todos los derechos reservados.</div>
+        <div class="footer-links">
+          <a href="#productos">Productos</a>
+          <a href="#como-funciona">Cómo funciona</a>
+          <a href="https://wa.me/5493564681839" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5493564681839?text=Hola%2C%20me%20interesa%20comprar%20por%20mayor"
+     class="wa-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <div class="wa-float-ring"></div>
+    <div class="wa-float-ring"></div>
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
